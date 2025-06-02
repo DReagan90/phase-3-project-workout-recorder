@@ -37,3 +37,10 @@ def show_statistics():
     if top_day:
         print(f"- Most active day: {top_day[0]} ({top_day[1]} workouts)")
 
+
+while True:
+    try:
+        duration = int(input("Duration (minutes): "))
+        break
+    except ValueError:
+        print("⛔ Please enter a valid number.")
