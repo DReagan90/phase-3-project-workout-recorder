@@ -1,5 +1,5 @@
 from db import insert_workout
-from datetime import datetime
+from datetime import date, datetime
 from db import fetch_workouts_by_date
 from db import fetch_statistics
 
@@ -44,3 +44,8 @@ while True:
         break
     except ValueError:
         print("⛔ Please enter a valid number.")
+
+print("\n🏋️ Workouts on", date)
+print("-" * 30)
+for i, (type_, duration, notes) in enumerate(workouts, 1): # type: ignore
+    print(f"{i}. {type_:10} | {duration:3} min | {notes}")
