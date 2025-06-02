@@ -24,3 +24,9 @@ def insert_workout(date, workout_type, duration, notes):
             VALUES (?, ?, ?, ?)
         """, (date, workout_type, duration, notes))
         conn.commit()
+
+def fetch_workouts_by_date(date):
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT type, duration, notes FROM workouts WHERE date = ?", (date,))
+        return cursor.fetchall()
