@@ -21,3 +21,7 @@ if __name__ == "__main__":
 def add_workout():   
   if choice == '1':
     add_workout()
+
+def view_workouts_by_date():
+    if choice == '2':
+        view_workouts_by_date()
