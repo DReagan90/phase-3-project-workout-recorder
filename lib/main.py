@@ -25,3 +25,7 @@ def add_workout():
 def view_workouts_by_date():
     if choice == '2':
         view_workouts_by_date()
+
+def show_statistics():
+    if choice == '3':
+        show_statistics()
