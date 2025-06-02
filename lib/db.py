@@ -30,3 +30,20 @@ def fetch_workouts_by_date(date):
         cursor = conn.cursor()
         cursor.execute("SELECT type, duration, notes FROM workouts WHERE date = ?", (date,))
         return cursor.fetchall()
+
+def fetch_statistics():
+    with get_connection() as conn:
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT COUNT(*), SUM(duration) FROM workouts")
+        total_workouts, total_duration = cursor.fetchone()
+
+        cursor.execute("""
+            SELECT date, COUNT(*) as count
+            FROM workouts
+            GROUP BY date
+            ORDER BY count DESC
+            LIMIT 1
+        """)
+        result = cursor.fetchone()
+        return total_workouts, total_duration, result
