@@ -16,3 +16,11 @@ def init_db():
             )
         """)
         conn.commit()
+def insert_workout(date, workout_type, duration, notes):
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            INSERT INTO workouts (date, type, duration, notes)
+            VALUES (?, ?, ?, ?)
+        """, (date, workout_type, duration, notes))
+        conn.commit()
