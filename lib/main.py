@@ -1,5 +1,6 @@
 from workout import add_workout, view_workouts_by_date, show_statistics
 from db import init_db 
+from workout import add_workout
 
 def main():
     while True:
@@ -16,3 +17,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+if choice == '1':
+    add_workout()
