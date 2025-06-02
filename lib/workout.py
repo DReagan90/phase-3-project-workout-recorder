@@ -49,3 +49,9 @@ print("\n🏋️ Workouts on", date)
 print("-" * 30)
 for i, (type_, duration, notes) in enumerate(workouts, 1): # type: ignore
     print(f"{i}. {type_:10} | {duration:3} min | {notes}")
+
+
+if total == 0: # type: ignore
+    print("No workouts recorded yet.")
+else:
+    print("\n📊 Workout Stats:")
