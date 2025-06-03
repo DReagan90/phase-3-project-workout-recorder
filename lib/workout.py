@@ -45,13 +45,10 @@ while True:
     except ValueError:
         print("⛔ Please enter a valid number.")
 
-print("\n🏋️ Workouts on", date)
-print("-" * 30)
-for i, (type_, duration, notes) in enumerate(workouts, 1): # type: ignore
-    print(f"{i}. {type_:10} | {duration:3} min | {notes}")
+# The following code block was using undefined variables and should be removed or placed inside a function where 'workouts', 'date', and 'total' are defined.
+# If you want to view workouts by date, call the 'view_workouts_by_date()' function.
+# If you want to show statistics, call the 'show_statistics()' function.
 
-
-if total == 0: # type: ignore
-    print("No workouts recorded yet.")
-else:
-    print("\n📊 Workout Stats:")
+# Example usage:
+# view_workouts_by_date()
+# show_statistics()
